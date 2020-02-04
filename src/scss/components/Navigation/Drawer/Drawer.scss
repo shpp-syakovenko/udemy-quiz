@@ -1,0 +1,37 @@
+.drawer{
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 80%;
+  max-width: 300px;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  background: #fff;
+  transform: translate(0px);
+  transition: all 0.2s ease-in;
+  z-index: 90;
+  &.close{
+    transform: translate(-300px);
+  }
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+      margin-bottom: 15px;
+      a{
+        color: #363d54;
+        font-size: 30px;
+        text-decoration: none;
+        background-color: #fff;
+        position: relative;
+        padding: 0 20px 10px 20px;
+        transition: all 0.2s ease-in;
+        &:hover, &:active{
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
