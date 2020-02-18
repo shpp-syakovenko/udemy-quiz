@@ -7,7 +7,7 @@ import QuizCreator from "./containers/QuizCreactor/QuizCreator";
 import Auth from "./containers/Auth/Auth";
 
 
-function App() {
+function App(props) {
   return (
     <Layout>
         <Switch>

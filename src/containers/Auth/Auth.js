@@ -3,6 +3,7 @@ import '../../scss/containers/Auth/Auth.scss';
 import Button from "../../components/Ui/Button/Button";
 import Input from '../../components/Ui/Input/Input';
 import is from "is_js";
+import axios from 'axios';
 
 export default class Auth extends Component{
 
@@ -36,11 +37,32 @@ export default class Auth extends Component{
         }
     };
 
-    loginHandler = () => {
+    loginHandler = async () => {
+        const authData = {
+            email: this.state.formControl.email.value,
+            password: this.state.formControl.password.value,
+            returnSecureToken: true
+        };
+        try{
+            const response = await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCpzrrI1l2riV7T0jq5oZRcg05XcLu82h4`, authData);
+            console.log(response);
+        }catch (e) {
+            console.log(e);
+        }
 
     };
 
-    registerHandler = () => {
+    registerHandler = async () => {
+        const authData = {
+          email: this.state.formControl.email.value,
+          password: this.state.formControl.password.value,
+          returnSecureToken: true
+        };
+        try{
+            await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCpzrrI1l2riV7T0jq5oZRcg05XcLu82h4`, authData);
+        }catch (e) {
+            console.log(e);
+        }
 
     };
 
