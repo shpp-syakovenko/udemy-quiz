@@ -29,11 +29,11 @@ export function fetchQuizes(){
 export function fetchQuizById(quizId){
     return async dispatch => {
         dispatch(fetchQuizesStart());
-        console.log('qqqqqqqqqqqqq');
+
         try {
             const response = await axios.get(`quizes/${quizId}.json`);
             const quiz = response.data;
-            console.log('qqqqqqqqqqqqq',quiz);
+
 
             dispatch(fetchQuizSuccess(quiz));
 
